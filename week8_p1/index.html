@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- PLEASE NO CHANGES BELOW THIS LINE (UNTIL I SAY SO) -->
+  <script language="javascript" type="text/javascript" src="libraries/p5.min.js"></script>
+  <script language="javascript" type="text/javascript" src="week8_p1.js"></script>
+  <!-- OK, YOU CAN MAKE CHANGES BELOW THIS LINE AGAIN -->
+  <script src="libraries/p5.sound.min.js"></script>
+  <link rel="stylesheet" href="p1.css">
+
+  
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 300vh; /* scrolling enabled */
+      overflow-x: hidden;
+      color: white;
+      font-family: sans-serif;
+    }
+
+    canvas {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .content {
+      position: relative;
+      z-index: 10;
+      padding: 4rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-top: 100px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="content">
+    <a href="/week8_projects/index.html" class="home-link">← Back</a>
+    <section class="hero-section" id="hero-section">
+
+      <img id="scroll-image" src="p1.png" alt="Light symbol">
+
+      <h1 class="glitch-text">Did you hear that?</h1>
+     
+    </section>
+    <section class="projects-section">
+    <h2 class="glitch-text">Project: Ultrasonic Buzzer</h2>
+    <div class="led-layout">
+    
+    <!-- Left collage -->
+        <div class="left-collage">
+          <div class="collage-wrapper">
+          
+            <img class="main-video" src="IMG_8350.jpeg">
+            <img class="main-video" src="IMG_8352.jpeg">
+          </div>
+        </div>
+
+    <!-- Center text -->
+    <div class="center-text floating-text">
+      <p>
+      For this project, we built an ultrasonic buzzer that could detect distance and react with sound.
+       Basically, the closer something got to the sensor, the more the buzzer would panic like a robot version of 
+       personal space issues.
+
+      The setup involved using an ultrasonic sensor to measure how far an object was, and then triggering the buzzer 
+      based on that distance. We also displayed the live distance readings on the serial monitor, which was helpful for 
+      understanding how the sensor was picking up changes in real time. Watching the numbers shift as we moved our hands 
+      back and forth felt oddly satisfying like playing tag with invisible waves.
+      </p>
+    </div>
+
+    <!-- Right media -->
+    <div class="right-media">
+      <video controls autoplay muted loop playsinline>
+        <source src="IMG_8353.MOV" type="video/mp4">
+      </video>   
+  </div>
+</section>
+<section class="projects-section">
+  <h2 class="glitch-text">Project: What does the potato say?</h2>
+  <div class="media-grid">
+    <video controls  autoplay muted loop playsinline style="width: 60%;">
+      <source src="IMG_8354.MOV" type="video/mp4">
+    </video>
+     <div class="center-text floating-text">
+      <p>
+       For the next project, we stuck some wires into a potato and connected it 
+       to the circuit to see what would happen (science!). The idea was to use the potato as a sort of touch sensor, 
+       where the buzzer would change its sound depending on how the wires were interacting with it.
+
+      When we inserted the wires into different parts of the potato, the buzzer gave off different sounds.
+       We also experimented by wrapping some of the wires in aluminum foil, which changed the conductivity and gave
+        us a variety of frequencies. Honestly, it started to feel more like we were making a low-budget synth than doing
+        a standard Arduino project.
+      </p>
+    </div>
+    
+  </div>
+</section>
+
+    <script>
+  window.addEventListener("scroll", () => {
+    const image = document.getElementById("scroll-image");
+    const scrollTop = window.scrollY;
+
+    // Make image move diagonally
+    const topOffset = scrollTop * 1.2;
+    const leftOffset = scrollTop * -0.6; // move left as you scroll
+
+    image.style.top = `${topOffset}px`;
+    image.style.left = calcOffset(leftOffset);
+  });
+
+  function calcOffset(x) {
+    // Ensure it doesn't go too far off the page
+    return `calc(100% + ${x}px)`;
+  }
+</script>
+
+</body>
+</html>

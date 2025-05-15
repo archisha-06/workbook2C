@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Workbook-2C</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+       
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    
+    }
+      
+    .background-video {
+  position: fixed;
+  inset: 0; /* replaces top: 0; left: 0; width: 100%; height: 100%; */
+  z-index: -1;
+}
+
+#bg-video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  opacity: 0.9;
+}
+
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensures full image is shown without being cropped */
+  display: block;
+}
+
+.link {
+  position: absolute;
+  font-size: 1rem; /* smaller, but readable */
+  font-family: 'Courier New', monospace;
+  color: #fff; /* bright white text */
+  text-decoration: none;
+  padding: 6px 12px;
+  background-color: rgba(0, 0, 0, 0.6); /* darker background for contrast */
+  border-radius: 6px;
+
+  /* Subtle paper cutout style using shadows */
+  box-shadow:
+    2px 2px 5px rgba(0, 0, 0, 0.4),
+    inset -1px -1px 2px rgba(255, 255, 255, 0.1),
+    inset 1px 1px 2px rgba(0, 0, 0, 0.3);
+
+  transition: transform 0.2s ease-in-out, background-color 0.3s;
+}
+
+/* Bounce hover effect with a slightly lighter background */
+.link:hover {
+  animation: bounce 0.4s ease;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  30%  { transform: translateY(-5px); }
+  60%  { transform: translateY(3px); }
+  100% { transform: translateY(0); }
+}
+
+    /* Adjust these positions based on your image layout */
+    .week7 {
+      top: 38%;
+      left: 45%;
+      transform: rotate(6deg);
+    }
+
+    .week8 {
+      top: 48%;
+      left: 44%;
+      transform: rotate(6deg);
+    }
+
+    .week9 {
+      top: 58%;
+      left: 43%;
+      transform: rotate(6deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="background-video">
+    <video autoplay muted loop id="bg-video">
+        <source src="./images/159052-818026310.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+  <div class="container">
+    <img src="./images/home-page.png" alt="Workbook-2C Homepage">
+    <a href="/week7_landing/index.html" class="link week7">Week 7</a>
+    <a href="/week8_landing/index.html" class="link week8">Week 8</a>
+    <a href="/week9_landing/index.html" class="link week9">Week 9</a>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+

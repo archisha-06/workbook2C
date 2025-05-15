@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- PLEASE NO CHANGES BELOW THIS LINE (UNTIL I SAY SO) -->
+  <script language="javascript" type="text/javascript" src="libraries/p5.min.js"></script>
+  <script language="javascript" type="text/javascript" src="week8_p1.js"></script>
+  <!-- OK, YOU CAN MAKE CHANGES BELOW THIS LINE AGAIN -->
+  <script src="libraries/p5.sound.min.js"></script>
+
+  
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 300vh; /* scrolling enabled */
+      overflow-x: hidden;
+      color: white;
+      font-family: sans-serif;
+    }
+
+    canvas {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .content {
+      position: relative;
+      z-index: 10;
+      padding: 4rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-top: 100px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="content">
+    <h1>Week 8 – Sound Waves</h1>
+    <p>
+      This week, we explored audio-based interactivity using Arduino and sensors. The goal was to integrate analog input (like microphones or ultrasonic sensors) to create visual or physical feedback triggered by sound.
+
+      The sketch in the background represents audio waves based on live input. You can clap, speak, or play music, and watch the waves respond dynamically.
+    </p>
+
+    <p>
+      It was fascinating to see how frequencies and amplitudes could be visualized and controlled. This kind of input-output relationship could be useful in installations, music-driven visuals, or even accessibility-focused design.
+    </p>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Week 8 – Galaxy with Trail</title>
+  <link rel="stylesheet" href="p2.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js"></script>
+</head>
+<body>
+  <!-- Week 8 content -->
+  <div class="content">
+    <a href="/week8_projects/index.html" class="home-link">← Back</a>
+    <section class="hero-section" id="hero-section">
+
+      <img id="scroll-image" src="p2.png" alt="Light symbol">
+
+      <h1 class="glitch-text">Lights Out, Numbers Up</h1>
+     
+    </section>
+    <section class="projects-section">
+    <h2 class="glitch-text">Project: Fish Playground</h2>
+    <div class="led-layout">
+    
+    <!-- Left collage -->
+        <div class="left-collage">
+          <div class="collage-wrapper">
+          
+            <img class="main-video" src="IMG_8349.jpeg">
+            <img class="main-video" src="IMG_8351.jpeg">
+          </div>
+        </div>
+
+    <!-- Center text -->
+    <div class="center-text floating-text">
+      <p>
+       For this project, we built a circuit using an Arduino board, a 10k resistor, a 
+       photoresistor, and a micro servo. The idea was to make the photoresistor r
+       espond to changes in light—when the brightness dropped below a certain level 
+       (set in the code), the servo would rotate. It was cool seeing how the sensor 
+       translated light into motion. We tested it out by blocking the photoresistor 
+       with our fingers or shining a light directly on it, and watched the servo react
+        in real-time. We also monitored the changing light values on the serial 
+        monitor.
+
+      </p>
+    </div>
+
+    <!-- Right media -->
+    <div class="right-media">
+      <video controls autoplay muted loop playsinline>
+        <source src="IMG_8348.MOV" type="video/mp4">
+      </video>   
+  </div>
+</section>
+
+    <script>
+  window.addEventListener("scroll", () => {
+    const image = document.getElementById("scroll-image");
+    const scrollTop = window.scrollY;
+
+    // Make image move diagonally
+    const topOffset = scrollTop * 1.2;
+    const leftOffset = scrollTop * -0.6; // move left as you scroll
+
+    image.style.top = `${topOffset}px`;
+    image.style.left = calcOffset(leftOffset);
+  });
+
+  function calcOffset(x) {
+    // Ensure it doesn't go too far off the page
+    return `calc(100% + ${x}px)`;
+  }
+</script>
+  <!-- Galaxy Background (p5.js) -->
+  <script src="week8_p2.js"></script>
+
+  <!-- Glowing Trail Canvas -->
+  <canvas id="trail"></canvas>
+  <script src="trail.js"></script>
+</body>
+</html>
+
+

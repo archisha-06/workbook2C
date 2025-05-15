@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- PLEASE NO CHANGES BELOW THIS LINE (UNTIL I SAY SO) -->
+  <script language="javascript" type="text/javascript" src="libraries/p5.min.js"></script>
+  <script language="javascript" type="text/javascript" src="week8_landing.js"></script>
+  <!-- OK, YOU CAN MAKE CHANGES BELOW THIS LINE AGAIN -->
+
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      background: black;
+      overflow: hidden;
+      font-family: 'Arial', sans-serif;
+    }
+ 
+
+    .nav-link {
+      position: absolute;
+      color: white;
+      text-shadow: 0 0 10px #0ff;
+      animation: glitch 2s infinite;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .nav-link:hover {
+      color: aqua;
+      box-shadow: 0 0 10px aqua;
+    }
+  
+    .home-link {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 1.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color:aqua;
+  background-color: #000000;
+  text-decoration: none;
+  background-color: rgba(0, 255, 136, 0.1);
+  padding: 10px 15px;
+  border-radius: 8px;
+  z-index: 20;
+  transition: 0.3s ease-in-out;
+}
+
+.home-link:hover {
+  background-color: aqua;
+  color: black;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px aqua;
+}
+  </style>
+</head>
+<body>
+<a href="/index.html" class="home-link">← Back</a>
+  <a class="nav-link" id="link1" href="/week8_research/index.html">Research</a>
+  <a class="nav-link" id="link2" href="/week8_projects/index.html">Projects</a>
+  <a class="nav-link" id="link3" href="/week8_progress/index.html">Progress</a>
+
+</body>
+</html>

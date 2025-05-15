@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- PLEASE NO CHANGES BELOW THIS LINE (UNTIL I SAY SO) -->
+  <script language="javascript" type="text/javascript" src="libraries/p5.min.js"></script>
+  <script language="javascript" type="text/javascript" src="week9_p1.js"></script>
+  <!-- OK, YOU CAN MAKE CHANGES BELOW THIS LINE AGAIN -->
+<link rel="stylesheet" href="p1.css">
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="canvas-container"></div>
+  <div id="content">
+   <a href="/week9_landing/index.html" class="home-link">← Back</a>
+  <section class="hero-section" id="hero-section">
+
+    <img id="scroll-image" src="p1.png" alt="Light symbol" />
+
+    <h1 class="glitch-text">Blink</h1>
+    
+  </section>
+
+  
+  <section class="projects-section">
+  <h2 class="glitch-text">Project: Simple LED Light Circuit</h2>
+  <div class="led-layout">
+    
+    <!-- Left collage -->
+    <div class="left-collage">
+      <div class="collage-wrapper">
+        <img src="IMG_8519.jpeg" class="collage-img img1" alt="Behind image 1">
+        <img src="IMG_8518.jpeg" class="collage-img img2" alt="Behind image 2">
+        
+        <video class="main-video" autoplay muted loop>
+          <source src="IMG_8520.MOV" type="video/mp4">
+        </video>
+      </div>
+      <img src="IMG_8522.jpeg" class="main-video" alt="Behind image 3" style="width: 350px; height: auto;">
+    </div>
+
+    <!-- Center text -->
+    <div class="center-text floating-text">
+      <p>
+       For Week 9, we got into Web Serial API stuff—basically a way to make 
+       your browser talk to your Arduino through a USB port. We had to use 
+       Chrome (or anything Chromium-based), plug in a library using a CDN,
+        and do a bit of setup in both Arduino and p5. Not too painful, once 
+        everything decided to cooperate.
+
+        The main idea was to use a potentiometer to control the brightness of a p5
+        sketch. The Arduino sends values, and the sketch listens in using this dataIn
+          variable. So as you turn the knob, the background of the canvas gets lighter
+          or darker. Simple, but kind of satisfying to see physical movement reflected 
+          on-screen.
+
+        We also added code to send data back from the browser—like mouse positions—so 
+        the two sides could actually communicate. Sort of like: “Hey Arduino, here’s 
+        where my mouse is,” and Arduino’s like, “Cool, here’s how bright I am.”
+
+        You have to click the canvas to choose the port, and if you forget to close 
+        the Arduino Serial Monitor, nothing works and everything complains. But once 
+        it's up and running, it’s smooth. The blinking LED helps to confirm that 
+        things are alive.
+      </p>
+    </div>
+
+    <!-- Right media -->
+    <div class="right-media">
+      <video controls autoplay muted loop playsinline>
+        <source src="IMG_8521.MOV" type="video/mp4">
+      </video>
+      <video controls autoplay muted loop playsinline>
+        <source src="IMG_8523.MOV" type="video/mp4">
+      </video>
+      
+  </div>
+</section>
+
+
+
+</div>
+
+
+ 
+<script>
+  window.addEventListener("scroll", () => {
+    const image = document.getElementById("scroll-image");
+    const scrollTop = window.scrollY;
+
+    // Make image move diagonally
+    const topOffset = scrollTop * 1.2;
+    const leftOffset = scrollTop * -0.6; // move left as you scroll
+
+    image.style.top = `${topOffset}px`;
+    image.style.left = calcOffset(leftOffset);
+  });
+
+  function calcOffset(x) {
+    // Ensure it doesn't go too far off the page
+    return `calc(100% + ${x}px)`;
+  }
+</script>
+
+
+</body>
+</html>

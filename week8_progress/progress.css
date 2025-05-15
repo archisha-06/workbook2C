@@ -1,0 +1,218 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #111;
+  font-family: sans-serif;
+  color: white;
+}
+.home-link {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 1.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color:aqua;
+  background-color: #000000;
+  text-decoration: none;
+  background-color: rgba(0, 255, 136, 0.1);
+  padding: 10px 15px;
+  border-radius: 8px;
+  z-index: 20;
+  transition: 0.3s ease-in-out;
+}
+
+.home-link:hover {
+  background-color: #00ffcc;
+  color: black;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px #00ffcc;
+}
+
+.top-right-images {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 700px;
+  height: 500px;
+  z-index: 2;
+  
+}
+.top-right-images .img1,
+.top-right-images .img2,
+.top-right-images .img3 {
+  position: absolute;
+  width: 400px;
+  height: 250px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.top-right-images .img1:hover,
+.top-right-images .img2:hover,
+.top-right-images .img3:hover {
+  transform: scale(1.5);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+
+.top-right-images .img1 {
+  position: absolute;
+  top: 0px;
+  left: -10px;
+  width: 250px;
+  height: 250px;
+}
+
+.top-right-images .img2 {
+  position: absolute;
+  top: 0px;
+  left: 300px;
+  width: 400px;
+  height: 250px;
+}
+
+.top-right-images .img3 {
+  position: absolute;
+  top: 250px;
+  left: 150px;
+  width: 400px;
+  height: 250px;
+}
+
+.textbox {
+  position: absolute;
+  top: 250px;
+  right: 170px;
+  width: 240px;
+  padding: 14px;
+  background: rgba(255,255,255,0.95);
+  color: #000;
+  border-radius: 8px;
+  font-size: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  z-index: 3;
+  pointer-events: auto;
+}
+
+.bottom-left-images {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 700px;
+  height: 500px;
+  z-index: 2;
+  pointer-events: none; /* This disables mouse interaction */
+}
+
+.bottom-left-images .img {
+  position: absolute;
+  width: 300px;
+  height: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  pointer-events: auto; /* Enable hover on individual images */
+}
+
+.bottom-left-images .img:nth-child(1) {
+  bottom: 0;
+  left: -10px;
+  height: 250px;
+}
+
+.bottom-left-images .img:nth-child(2) {
+  bottom: 45px;
+  left: 300px;
+  height: 300px;
+}
+
+.bottom-left-images .img:nth-child(3) {
+  bottom: 200px;
+  left: 100px;
+  height: 400px;
+}
+
+/* Hover effect */
+.bottom-left-images .img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  z-index: 5;
+}
+
+
+.top-right-caption {
+  position: absolute;
+  top: 500px; /* adjust depending on image height */
+  right: 30px;
+  width: 300px;
+  font-size: 14px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  border-radius: 6px;
+  z-index: 2;
+}
+
+.bottom-left-caption {
+  position: absolute;
+  bottom: 550px; /* adjust depending on image height */
+  left: 30px;
+  width: 300px;
+  font-size: 14px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  border-radius: 6px;
+  z-index: 2;
+}
+
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  pointer-events: none; /* lets clicks pass through the canvas */
+}
+@media (max-width: 768px) {
+  .top-right-images,
+  .bottom-left-images {
+    width: 100%;
+    height: auto;
+    position: static;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+  }
+ 
+  .top-right-images img,
+  .bottom-left-images img {
+    width: 90vw;
+    height: auto;
+    position: static;
+  }
+
+  .textbox {
+    position: static;
+    width: 90vw;
+    margin: 10px auto;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  p.floating-text {
+    text-align: center;
+    font-size: 14px;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  canvas {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+

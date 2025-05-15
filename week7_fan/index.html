@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- PLEASE NO CHANGES BELOW THIS LINE (UNTIL I SAY SO) -->
+  <script language="javascript" type="text/javascript" src="libraries/p5.min.js"></script>
+  <script language="javascript" type="text/javascript" src="week7_fan.js"></script>
+  <!-- OK, YOU CAN MAKE CHANGES BELOW THIS LINE AGAIN -->
+<link rel="stylesheet" href="fan.css">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 200vh; /* allow scrolling */
+      overflow-x: hidden;
+      font-family: sans-serif;
+      color: white;
+      z-index: 1;
+    }
+
+    #defaultCanvas0 {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      pointer-events: none; /* let user interact with page content */
+    }
+
+    .content {
+      position: relative;
+      z-index: 10;
+      padding: 3rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-top: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <a href="/week7_landing/index.html" class="home-link">← Back</a>
+     <img id="scroll-image" src="IMG_8703.PNG" alt="Light symbol" />
+  <section class="hero-section" id="hero-section">
+
+
+
+    <h1 class="glitch-text">Spinergy</h1>
+    
+  </section>
+  <section class="projects-section">
+  <h2 class="glitch-text">Project: Simple LED Light Circuit</h2>
+  <div class="led-layout">
+    
+    <!-- Left collage -->
+    <div class="left-collage">
+      <div class="collage-wrapper">
+        <img src="IMG_7946.jpeg" class="collage-img img1" alt="Behind image 1">
+        <img src="IMG_7953.jpeg" class="collage-img img2" alt="Behind image 2">
+        <img src="IMG_8703.jpeg" class="collage-img img3" alt="Behind image 3">
+        <video class="main-video" autoplay muted loop>
+          <source src="IMG_7949.MOV" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <!-- Center text -->
+    <div class="center-text floating-text">
+      <p>
+        After getting the hang of the light circuit, we moved on to the next logical step:
+       making a fan spin. The setup was similar in structure—basic components, a bit
+        of wiring, and the Arduino at the center calling the shots. Instead of an LED, 
+        we connected a small DC motor, which acted as our makeshift fan. We controlled 
+        it using a switch at first, and then tried adjusting its speed using analog 
+        input, just like we did with the tilt sensor for the light.
+      </p>
+    </div>
+
+    <!-- Right media -->
+    <div class="right-media">
+      <video controls autoplay muted loop playsinline>
+        <source src="IMG_7951.MOV" type="video/mp4">
+      </video>
+      
+  </div>
+</section>
+</div>
+  
+
+<script>
+  window.addEventListener("scroll", () => {
+    const image = document.getElementById("scroll-image");
+    const scrollTop = window.scrollY;
+
+    // Make image move diagonally
+    const topOffset = scrollTop * 1.2;
+    const leftOffset = scrollTop * -0.6; // move left as you scroll
+
+    image.style.top = `${topOffset}px`;
+    image.style.left = calcOffset(leftOffset);
+  });
+
+  function calcOffset(x) {
+    // Ensure it doesn't go too far off the page
+    return `calc(100% + ${x}px)`;
+  }
+</script>
+</body>
+</html>
+
