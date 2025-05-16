@@ -91,8 +91,8 @@ function createWeekText() {
 function createLinks() {
   const links = [
     
-    { name: "Projects", url: "/week9_p1/index.html" },
-    { name: "Progress", url: "/week9_progress/index.html" },
+    { name: "Projects", url: "../week9_p1/index.html" },
+    { name: "Progress", url: "../week9_progress/index.html" },
   ];
 
   for (let i = 0; i < links.length; i++) {
