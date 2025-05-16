@@ -86,9 +86,9 @@ function mousePressed() {
 
   // If not back, then go to project links
   if (mouseY < height / 2) {
-    window.open('/week7_led/index.html', '_blank');
+    window.open('../week7_led/index.html', '_blank');
   } else {
-    window.open('/week7_fan/index.html', '_blank');
+    window.open('../week7_fan/index.html', '_blank');
   }
 }
 
