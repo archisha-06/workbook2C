@@ -108,7 +108,7 @@ function createLinks() {
     link.style("z-index", "10");
   }
     // Add back link
-  let backLink = createA('/index.html', '← Back');
+  let backLink = createA('../index.html', '← Back');
   backLink.style("position", "absolute");
   backLink.style("top", "20px");
   backLink.style("left", "20px");
