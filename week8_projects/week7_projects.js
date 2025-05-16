@@ -19,7 +19,7 @@ function setup() {
   }
 
   // Create the back link
-  backButton = createA('/week8_landing/index.html', '← Back');
+  backButton = createA('../week8_landing/index.html', '← Back');
   backButton.position(20, 20);
   backButton.style('font-size', '20px');
   backButton.style('color', 'cyan');
