@@ -98,9 +98,9 @@ function mousePressed() {
 
   // If not back, then go to project links
   if (mouseY < height / 2) {
-    window.open('/week8_p1/index.html', '_blank');
+    window.open('../week8_p1/index.html', '_blank');
   } else {
-    window.open('/week8_p2/index.html', '_blank');
+    window.open('../week8_p2/index.html', '_blank');
   }
 }
 
