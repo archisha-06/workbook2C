@@ -80,7 +80,7 @@ function draw() {
 function mousePressed() {
   // First, check if "Back" was clicked
   if (mouseX > 20 && mouseX < 100 && mouseY > 20 && mouseY < 50) {
-    window.location.href = '/week7_landing/index.html'; // Change to your actual back link
+    window.location.href = '../week7_landing/index.html'; // Change to your actual back link
     return; // Stop further execution
   }
 
